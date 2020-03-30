@@ -7,4 +7,4 @@ Controls available
 
 
 ## Demo
-![PCF-Text-Animation-Demo](https://github.com/jenschristianschroder/PCF-Text-Animation/blob/master/Demos/Demo.svg?sanitize=true)
+![PCF-Text-Animation-Demo](https://github.com/jenschristianschroder/PCF-Text-Animation/blob/master/Demos/Demo.svg)
