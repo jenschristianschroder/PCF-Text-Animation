@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="PowerAppsGuy" constructor="PulsingText" version="0.0.6" display-name-key="PulsingText" description-key="PulsingText description" control-type="standard">
+    <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
+    <property name="text" display-name-key="text_Display_Key" description-key="Text" of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="color" display-name-key="color_Display_Key" description-key="Color" of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="pulsecolors" display-name-key="pulsecolors_Display_Key" description-key="Pulse colors" of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="font" display-name-key="font_Display_Key" description-key="Font" of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="fontsize" display-name-key="font_size_Display_Key" description-key="Font size" of-type="Whole.None" usage="input" required="true" />
+    <property name="fontweight" display-name-key="font_weight_Display_Key" description-key="Font weight" of-type="Whole.None" usage="input" required="true" />
+    <property name="spacing" display-name-key="spacing_Display_Key" description-key="Letter spacing" of-type="Whole.None" usage="input" required="true" />
+    <property name="duration" display-name-key="duration_Display_Key" description-key="Duration" of-type="Whole.None" usage="input" required="true" />
+    <property name="repeat" display-name-key="repeat_Display_Key" description-key="Repeat" of-type="SingleLine.Text" usage="input" required="true" />
+    
+    <resources>
+      <code path="index.ts" order="1"/>
+    </resources>
+    <!-- UNCOMMENT TO ENABLE THE SPECIFIED API
+    <feature-usage>
+      <uses-feature name="Device.captureAudio" required="true" />
+      <uses-feature name="Device.captureImage" required="true" />
+      <uses-feature name="Device.captureVideo" required="true" />
+      <uses-feature name="Device.getBarcodeValue" required="true" />
+      <uses-feature name="Device.getCurrentPosition" required="true" />
+      <uses-feature name="Device.pickFile" required="true" />
+      <uses-feature name="Utility" required="true" />
+      <uses-feature name="WebAPI" required="true" />
+    </feature-usage>
+    -->
+  </control>
+</manifest>
