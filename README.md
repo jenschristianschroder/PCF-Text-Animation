@@ -4,7 +4,3 @@ Controls available
 - Pulsing Text
 - Sliding Text
 - Spinning Text
-
-
-## Demo
-![PCF-Text-Animation-Demo](https://github.com/jenschristianschroder/PCF-Text-Animation/blob/master/Demos/Demo.svg)
