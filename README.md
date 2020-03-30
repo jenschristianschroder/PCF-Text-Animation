@@ -4,3 +4,7 @@ Controls available
 - Pulsing Text
 - Sliding Text
 - Spinning Text
+
+
+## Demo
+![Alt text](./Demos/Demo.svg?sanitize=true)
