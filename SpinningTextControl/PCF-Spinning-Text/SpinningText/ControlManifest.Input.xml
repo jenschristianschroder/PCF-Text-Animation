@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
-  <control namespace="PowerAppsGuy" constructor="SpinningText" version="0.0.5" display-name-key="SpinningText" description-key="Spinning Text" control-type="standard">
+  <control namespace="PowerAppsGuy" constructor="SpinningText" version="0.0.8" display-name-key="SpinningText" description-key="Spinning Text" control-type="standard">
     <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
-    <property name="text" display-name-key="text_Display_Key" description-key="Text" of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="text" display-name-key="text_Display_Key" description-key="Text" of-type="SingleLine.Text" usage="bound" required="true" />
     <property name="color" display-name-key="color_Display_Key" description-key="Color" of-type="SingleLine.Text" usage="input" required="true" />
-    <property name="background" display-name-key="background_Display_Key" description-key="Background" of-type="SingleLine.Text" usage="input" required="true" />
     <property name="font" display-name-key="font_Display_Key" description-key="Font" of-type="SingleLine.Text" usage="input" required="true" />
     <property name="fontsize" display-name-key="font_size_Display_Key" description-key="Font size" of-type="Whole.None" usage="input" required="true" />
     <property name="fontweight" display-name-key="font_weight_Display_Key" description-key="Font weight" of-type="Whole.None" usage="input" required="true" />

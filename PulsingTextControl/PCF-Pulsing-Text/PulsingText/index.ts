@@ -38,7 +38,7 @@ export class PulsingText implements ComponentFramework.StandardControl<IInputs, 
 		// Add control initialization code
 		this.controlId = Random.newString();
 
-		this.svgContent = "<svg viewBox='0 0 500 500'><defs><style>text { font-size: 30px; font-family: Franklin Gothic, sans-serif; font-weight: 100; text-transform: uppercase; letter-spacing: 0px; } </style></defs><text x='0' y='30'>This is my pulsing text<animate attributeType='XML' attributeName='fill' values='#800;#f00;#800;#800' dur='1s' repeatCount='indefinite'/></text></svg>";
+		this.svgContent = "<svg viewBox='0 0 500 30'><defs><style>text { font-size: 30px; font-family: Franklin Gothic, sans-serif; font-weight: 100; text-transform: uppercase; letter-spacing: 0px; } </style></defs><text x='0' y='30'>This is my pulsing text<animate attributeType='XML' attributeName='fill' values='#800;#f00;#800;#800' dur='1s' repeatCount='indefinite'/></text></svg>";
 
 		// Need to track container resize so that control could get the available width. The available height won't be provided even this is true
 		context.mode.trackContainerResize(true);
@@ -104,13 +104,17 @@ export class PulsingText implements ComponentFramework.StandardControl<IInputs, 
 		}
 
 		// Add code to update control view
-		this.svgContent = this.configureText(context.mode.allocatedHeight, this.text, this.color, this.pulsecolors, this.font, this.fontsize, this.fontweight, this.spacing, this.duration, this.repeat);
+		this.svgContent = this.configureText(this.text, this.color, this.pulsecolors, this.font, this.fontsize, this.fontweight, this.spacing, this.duration, this.repeat);
 		this.svgContainer.innerHTML = this.svgContent;
 	}
 
 	// configure the svg element according to input	
-	private configureText(height: number, text: string, color: string, pulsecolors: string,  font: string, fontsize: number, fontweight: number, spacing: number, duration: number, repeat: string) {
-		return "<svg viewBox='0 0 500 500'><defs><path d='M 0," + height / 4 + " L 500," + height / 4 + "' id='textpath'></path></defs><text x='0' style='fill: " + color + "; font-size: " + fontsize + "px; font-family: " + font + "; font-weight: " + fontweight + "; letter-spacing: " + spacing + "px;'><textPath id='textContainer' xlink:href='#textpath'>" + text + "<animate attributeType='XML' attributeName='fill' values='" + pulsecolors + "' dur='" + duration + "s' repeatCount='" + repeat + "'/></textpath></text></svg>";
+	private configureText(text: string, color: string, pulsecolors: string,  font: string, fontsize: number, fontweight: number, spacing: number, duration: number, repeat: string) {
+		if(font.indexOf(" ") > -1) {
+			font = "\"" + font + "\"";
+		}
+		let randomString = Random.newString();
+		return "<svg viewBox='0 0 500 " + (fontsize * 1.2) + "'><defs><path d='M 0," + fontsize / 3 + " L 500," + fontsize / 3 + "' id='" + randomString + "textpath'></path></defs><text transform='translate(0, " + fontsize/2 + ")' x='0' style='fill: " + color + "; font-size: " + fontsize + "px; font-family: " + font + "; font-weight: " + fontweight + "; letter-spacing: " + spacing + "px;'><textPath id='textContainer' xlink:href='#" + randomString + "textpath'>" + text + "<animate attributeType='XML' attributeName='fill' values='" + pulsecolors + "' dur='" + duration + "s' repeatCount='" + repeat + "'/></textpath></text></svg>";
 	}
 
 	/** 

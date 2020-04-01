@@ -100,19 +100,25 @@ export class SlidingText implements ComponentFramework.StandardControl<IInputs, 
 				this.lefttoright = context.parameters.lefttoright.raw;
 		}
 		// Add code to update control view
-		this.svgContent = this.configureText(context.mode.allocatedHeight, this.text, this.color, this.background, this.font, this.fontsize, this.fontweight, this.spacing, this.lefttoright, this.duration, this.repeat);
+		this.svgContent = this.configureText(this.text, this.color, this.background, this.font, this.fontsize, this.fontweight, this.spacing, this.lefttoright, this.duration, this.repeat);
 		this.svgContainer.innerHTML = this.svgContent;
 	}
 
 	// configure the svg element according to input	
-	private configureText(height: number, text: string, color: string, background: string, font: string, fontsize: number, fontweight: number, spacing: number, lefttoright: boolean, duration: number, repeat: string) {
+	private configureText(text: string, color: string, background: string, font: string, fontsize: number, fontweight: number, spacing: number, lefttoright: boolean, duration: number, repeat: string) {
+		let textlength = text.length;
+		
 		var direction = "";
 		if(lefttoright)
-			direction = "from='-500 0' to='1000 0'";
+			direction = "from='-500 0' to='500 0'";
 		else
-			direction = "from='1000 0' to='-500 0'";
-
-		return "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 500 500'><defs><path d='M 0," + height / 4 + " 500," + height / 4 + "' id='" + this.controlId + "textpath'><animateTransform attributeName='transform' begin='0s' dur='" + duration + "s' type='translate ' " + direction + " repeatCount='" + repeat + "'></animateTransform></path></defs><text style='fill: " + color + "; font-size: " + fontsize + "px; font-family: " + font + "; font-weight: " + fontweight + "; letter-spacing: " + spacing + "px;'><textPath id='" + this.controlId + "textContainer' xlink:href='#" + this.controlId + "textpath'>" + text + "</textPath></text></svg>";
+			direction = "from='500 0' to='-500 0'";
+		if(font.indexOf(" ") > -1) {
+			font = "\"" + font + "\"";
+		}
+		let randomString = Random.newString();
+		
+		return "<svg viewBox='0 0 500 " + (fontsize * 1.2) + "'><defs><path d='M 0," + fontsize / 3 + " 500," + fontsize / 3 + "' id='" + randomString + "textpath'><animateTransform attributeName='transform' begin='0s' dur='" + duration + "s' type='translate ' " + direction + " repeatCount='" + repeat + "'></animateTransform></path></defs><text id='" + randomString + "text' transform='translate(0, " + fontsize/2 + ")' style='fill: " + color + "; font-size: " + fontsize + "px; font-family: " + font + "; font-weight: " + fontweight + "; letter-spacing: " + spacing + "px;'><textPath id='" + randomString + "textContainer' xlink:href='#" + randomString + "textpath'>" + text + "</textPath></text></svg>";
 	}
 
 

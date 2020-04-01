@@ -62,11 +62,6 @@ export class SpinningText implements ComponentFramework.StandardControl<IInputs,
 				this.color = context.parameters.color.raw.toString();
 		}
 		
-		if(context.parameters.background != null){
-			if(context.parameters.background.raw != null)
-				this.background = context.parameters.background.raw.toString();
-		}
-
 		if(context.parameters.font != null){
 			if(context.parameters.font.raw != null)
 				this.font = context.parameters.font.raw.toString();
@@ -98,21 +93,31 @@ export class SpinningText implements ComponentFramework.StandardControl<IInputs,
 		}
 
 		// Add code to update control view
-		this.svgContent = this.configureText(this.text, this.color, this.background, this.font, this.fontsize, this.fontweight, this.spacing, this.duration);
+		this.svgContent = this.configureText(this.text, this.color, this.font, this.fontsize, this.fontweight, this.spacing, this.duration);
 		this.svgContainer.innerHTML = this.svgContent;
 	}
 
 	// configure the svg element according to input	
-	private configureText(text: string, color: string, background: string, font: string, fontsize: number, fontweight: number, spacing: number, duration: number) {
+	private configureText(text: string, color: string, font: string, fontsize: number, fontweight: number, spacing: number, duration: number) {
+		let randomString = Random.newString();
+		let ratio = fontsize/50;
+
 		var direction = "";
 		if(this.clockwise)
-			direction = "from='0 250 250' to='360 250 250'";
+			direction = "from='0 " + ratio*250 + " " + ratio*250 + "' to='360 " + ratio*250 + " " + ratio*250 + "'";
 		else
-			direction = "from='360 250 250' to='0 250 250'";
+			direction = "from='360 " + ratio*250 + " " + ratio*250 + "' to='0 " + ratio*250 + " " + ratio*250 + "'";
 
-		return "<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 500 500'><defs><path d='M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250' id='" + this.controlId + "textcircle'><animateTransform attributeName='transform' begin='0s' dur='" + duration + "s' type='rotate' " + direction + " repeatCount='indefinite'></animateTransform></path></defs><text><textPath style='fill: " + color + "; font-size: " + fontsize + "px; font-family: " + font + "; font-weight: " + fontweight + "; letter-spacing: " + spacing + "px;' id='textContainer' xlink:href='#" + this.controlId + "textcircle'>" + text + "</textPath></text></svg>";
+		if(font.indexOf(" ") > -1) {
+			font = "\"" + font + "\"";
+		}
+		let circularPath = this.circlePath(fontsize*5, fontsize*5, fontsize*2);
+		return "<svg viewBox='0 0 500 " + ratio*500 + "'><g id='" + randomString + "group'><defs><path d='M" + ratio*50 + "," + ratio*250 + "c0-" + ratio*110.5 + "," + ratio*89.5 + "-" + ratio*200 + "," + ratio*200 + "-" + ratio*200 + "s" + ratio*200 + "," + ratio*89.5 + "," + ratio*200 + "," + ratio*200 + "s" + ratio*-89.5 + "," + ratio*200 + "-" + ratio*200 + "," + ratio*200 + "S" + ratio*50 + "," + ratio*360.5 + "," + ratio*50 + "," + ratio*250 + "' id='" + this.controlId + "textcircle'><animateTransform attributeName='transform' begin='0s' dur='" + duration + "s' type='rotate' " + direction + " repeatCount='indefinite'></animateTransform></path></defs><text><textPath style='fill: " + color + "; font-size: " + fontsize + "px; font-family: " + font + "; font-weight: " + fontweight + "; letter-spacing: " + spacing + "px;' id='textContainer' xlink:href='#" + this.controlId + "textcircle'>" + text + "</textPath></text></g></svg>";
 	}
 
+	private circlePath(centerX: number, centerY: number, radius: number){
+		return 'M '+centerX+' '+centerY+' m -'+radius+', 0 a '+radius+','+radius+' 0 1,0 '+(radius*2)+',0 a '+radius+','+radius+' 0 1,0 -'+(radius*2)+',0';
+	}
 
 	/** 
 	 * It is called by the framework prior to a control receiving new data. 
@@ -132,6 +137,8 @@ export class SpinningText implements ComponentFramework.StandardControl<IInputs,
 		// Add code to cleanup control if necessary
 	}
 }
+
+
 
 class Random {
 	static newString() {

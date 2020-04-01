@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
-  <control namespace="PowerAppsGuy" constructor="PulsingText" version="0.0.6" display-name-key="PulsingText" description-key="PulsingText description" control-type="standard">
+  <control namespace="PowerAppsGuy" constructor="PulsingText" version="0.0.9" display-name-key="PulsingText" description-key="PulsingText description" control-type="standard">
     <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
-    <property name="text" display-name-key="text_Display_Key" description-key="Text" of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="text" display-name-key="text_Display_Key" description-key="Text" of-type="SingleLine.Text" usage="bound" required="true" />
     <property name="color" display-name-key="color_Display_Key" description-key="Color" of-type="SingleLine.Text" usage="input" required="true" />
     <property name="pulsecolors" display-name-key="pulsecolors_Display_Key" description-key="Pulse colors" of-type="SingleLine.Text" usage="input" required="true" />
     <property name="font" display-name-key="font_Display_Key" description-key="Font" of-type="SingleLine.Text" usage="input" required="true" />
