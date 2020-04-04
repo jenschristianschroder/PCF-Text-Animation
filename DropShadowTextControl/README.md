@@ -13,4 +13,4 @@ Following properties are configurable
 - Shadow blur
 - Shadow size
 - Shadow x offset
-- Sahdow y offset
+- Shadow y offset
