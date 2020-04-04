@@ -1,11 +1,30 @@
 # A set of Power Apps PCF controls to animate text
 
 Controls available
--Pulsing Text
--Sliding Text
--Spinning Text
+
+- Drop Shadow Text
+- Pulsing Text
+- Sliding Text
+- Spinning Text
 
 [Demos](https://github.com/jenschristianschroder/PCF-Text-Animation/blob/master/Demos)
+
+## Drop Shadow Text Control
+
+![Drop Shadow Text Control](Demos/Drop&#32;shadow&#32;text&#32;in&#32;Model-Drive&#32;Apps_small.gif)
+
+Following properties are configurable
+
+- Text
+- Color
+- Font
+- Font size
+- Font weight
+- Shadow color
+- Shadow blur
+- Shadow size
+- Shadow x offset
+- Sahdow y offset
 
 ## Pulsing Text Control
 
