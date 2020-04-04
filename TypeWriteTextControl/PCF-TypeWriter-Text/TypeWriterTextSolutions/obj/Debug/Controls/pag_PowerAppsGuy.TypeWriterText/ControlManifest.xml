@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <manifest>
-  <control namespace="PowerAppsGuy" constructor="TypeWriterText" version="0.0.2" display-name-key="TypeWriterText" description-key="TypeWriterText description" control-type="standard" api-version="1.2.1">
+  <control namespace="PowerAppsGuy" constructor="TypeWriterText" version="0.0.6" display-name-key="TypeWriterText" description-key="TypeWriterText description" control-type="standard" api-version="1.2.1">
     <property name="text" display-name-key="text_Display_Key" description-key="Text" of-type="SingleLine.Text" usage="bound" required="true"/>
     <property name="color" display-name-key="color_Display_Key" description-key="Color" of-type="SingleLine.Text" usage="input" required="true"/>
     <property name="font" display-name-key="font_Display_Key" description-key="Font" of-type="SingleLine.Text" usage="input" required="true"/>

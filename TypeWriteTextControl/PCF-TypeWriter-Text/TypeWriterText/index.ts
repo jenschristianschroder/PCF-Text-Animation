@@ -37,7 +37,7 @@ export class TypeWriterText implements ComponentFramework.StandardControl<IInput
 		// Add control initialization code
 		this.controlId = Random.newString();
 
-		this.svgContent = "<svg viewBox='0 0 500 30'><path id='a8bd933df1160a92d3e2149af913d542path'><animate attributeName='d' from='m0,110 h0' to='m0,110 h1100' dur='6' begin='0s' repeatCount='indefinite'></animate></path><text><textPath xlink:href='#a8bd933df1160a92d3e2149af913d542path' style='fill: black; font-size: 30px; font-family:&quot;courier&quot;; font-weight: 400; letter-spacing: undefinedpx;'>Text with typewriter effect</textPath></text></svg>";
+		this.svgContent = "<svg viewBox='0 0 500 30'><path id='a8bd933df1160a92d3e2149af913d542path'><animate attributeName='d' from='m0,30 h0' to='m0,30 h1100' dur='6' begin='0s' repeatCount='indefinite'></animate></path><text><textPath xlink:href='#a8bd933df1160a92d3e2149af913d542path' style='fill: black; font-size: 30px; font-family:&quot;courier&quot;; font-weight: 400; letter-spacing: undefinedpx;'>Text with typewriter effect</textPath></text></svg>";
 
 		// Need to track container resize so that control could get the available width. The available height won't be provided even this is true
 		context.mode.trackContainerResize(true);
@@ -111,7 +111,7 @@ export class TypeWriterText implements ComponentFramework.StandardControl<IInput
 		
 		let svgstring = "<svg viewBox='0 0 500 " + (fontsize * 1.2) + "'>" +
 							"<path id='" + randomString + "path'>" +
-								"<animate attributeName='d' from='m0,110 h0' to='m0,110 h1100' dur='" + duration + "' begin='0s' repeatCount='" + repeat + "'/>" +
+								"<animate attributeName='d' from='m0," + fontsize + "  h0' to='m0," + fontsize + "  h1100' dur='" + duration + "' begin='0s' repeatCount='" + repeat + "'/>" +
 							"</path>" +
 							"<text >" +
 								"<textPath xlink:href='#" + randomString + "path' style='fill: " + color + "; font-size: " + fontsize + "px; font-family:\"" + font + "\"; font-weight: " + fontweight + "; letter-spacing: " + spacing + "px;'>" + 

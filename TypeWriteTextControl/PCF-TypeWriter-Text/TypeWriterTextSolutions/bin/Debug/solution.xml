@@ -8,7 +8,7 @@
       <LocalizedName description="TypeWriterTextSolutions" languagecode="1033" />
     </LocalizedNames>
     <Descriptions />
-    <Version>0.2</Version>
+    <Version>0.6</Version>
     <!-- Solution Package Type: Unmanaged(0)/Managed(1)/Both(2)-->
     <Managed>0</Managed>
     <Publisher>
@@ -89,7 +89,7 @@
       </Addresses>
     </Publisher>
     <RootComponents>
-      <RootComponent type="66" schemaName="pag_PowerAppsGuy.TypeWriterTextControl" behavior="0" />
+      <RootComponent type="66" schemaName="pag_PowerAppsGuy.TypeWriterText" behavior="0" />
     </RootComponents>
     <MissingDependencies />
   </SolutionManifest>
