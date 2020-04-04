@@ -1,14 +1,12 @@
 import {IInputs, IOutputs} from "./generated/ManifestTypes";
 
-export class TypeWriterTextControl implements ComponentFramework.StandardControl<IInputs, IOutputs> {
+export class TypeWriterText implements ComponentFramework.StandardControl<IInputs, IOutputs> {
 
 	private controlId: string;
 
 	private svgContainer: HTMLDivElement;
 	private svgContent: string;
 	private text: string;
-	private controlWidth: number;
-	private controlHeight: number;
 	private color: string;
 	
 	private font: string;
@@ -39,7 +37,7 @@ export class TypeWriterTextControl implements ComponentFramework.StandardControl
 		// Add control initialization code
 		this.controlId = Random.newString();
 
-		this.svgContent = "<svg viewBox='0 0 500 30'><defs><style>text { font-size: 30px; font-family: Franklin Gothic, sans-serif; font-weight: 100; text-transform: uppercase; letter-spacing: 0px; } </style></defs><text x='0' y='30'>This is my pulsing text<animate attributeType='XML' attributeName='fill' values='#800;#f00;#800;#800' dur='1s' repeatCount='indefinite'/></text></svg>";
+		this.svgContent = "<svg viewBox='0 0 500 30'><path id='a8bd933df1160a92d3e2149af913d542path'><animate attributeName='d' from='m0,110 h0' to='m0,110 h1100' dur='6' begin='0s' repeatCount='indefinite'></animate></path><text><textPath xlink:href='#a8bd933df1160a92d3e2149af913d542path' style='fill: black; font-size: 30px; font-family:&quot;courier&quot;; font-weight: 400; letter-spacing: undefinedpx;'>Text with typewriter effect</textPath></text></svg>";
 
 		// Need to track container resize so that control could get the available width. The available height won't be provided even this is true
 		context.mode.trackContainerResize(true);
@@ -111,7 +109,7 @@ export class TypeWriterTextControl implements ComponentFramework.StandardControl
 		}
 		let randomString = Random.newString();
 		
-		let svgstring = "<svg viewBox='0 0 800 500'>" +
+		let svgstring = "<svg viewBox='0 0 500 " + (fontsize * 1.2) + "'>" +
 							"<path id='" + randomString + "path'>" +
 								"<animate attributeName='d' from='m0,110 h0' to='m0,110 h1100' dur='" + duration + "' begin='0s' repeatCount='" + repeat + "'/>" +
 							"</path>" +
