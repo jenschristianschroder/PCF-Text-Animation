@@ -118,7 +118,7 @@ export class SlidingText implements ComponentFramework.StandardControl<IInputs, 
 		}
 		let randomString = Random.newString();
 		
-		return "<svg viewBox='0 0 500 " + (fontsize * 1.2) + "'><defs><path d='M 0," + fontsize / 3 + " 500," + fontsize / 3 + "' id='" + randomString + "textpath'><animateTransform attributeName='transform' begin='0s' dur='" + duration + "s' type='translate ' " + direction + " repeatCount='" + repeat + "'></animateTransform></path></defs><text id='" + randomString + "text' transform='translate(0, " + fontsize/2 + ")' style='fill: " + color + "; font-size: " + fontsize + "px; font-family: " + font + "; font-weight: " + fontweight + "; letter-spacing: " + spacing + "px;'><textPath id='" + randomString + "textContainer' xlink:href='#" + randomString + "textpath'>" + text + "</textPath></text></svg>";
+		return "<svg viewBox='0 0 500 " + (fontsize * 1.2) + "'><defs><path d='M 0," + fontsize / 3 + " 1500," + fontsize / 3 + "' id='" + randomString + "textpath'><animateTransform attributeName='transform' begin='0s' dur='" + duration + "s' type='translate ' " + direction + " repeatCount='" + repeat + "'></animateTransform></path></defs><text id='" + randomString + "text' transform='translate(0, " + fontsize/2 + ")' style='fill: " + color + "; font-size: " + fontsize + "px; font-family: " + font + "; font-weight: " + fontweight + "; letter-spacing: " + spacing + "px;'><textPath id='" + randomString + "textContainer' xlink:href='#" + randomString + "textpath'>" + text + "</textPath></text></svg>";
 	}
 
 
