@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<manifest>
+  <control namespace="PowerAppsGuy" constructor="TypeWriterTextControl" version="0.0.1" display-name-key="TypeWriterTextControl" description-key="TypeWriterTextControl description" control-type="standard" api-version="1.2.1">
+    <property name="text" display-name-key="text_Display_Key" description-key="Text" of-type="SingleLine.Text" usage="bound" required="true"/>
+    <property name="color" display-name-key="color_Display_Key" description-key="Color" of-type="SingleLine.Text" usage="input" required="true"/>
+    <property name="font" display-name-key="font_Display_Key" description-key="Font" of-type="SingleLine.Text" usage="input" required="true"/>
+    <property name="fontsize" display-name-key="font_size_Display_Key" description-key="Font size" of-type="Whole.None" usage="input" required="true"/>
+    <property name="fontweight" display-name-key="font_weight_Display_Key" description-key="Font weight" of-type="Whole.None" usage="input" required="true"/>
+    <property name="spacing" display-name-key="spacing_Display_Key" description-key="Letter spacing" of-type="Whole.None" usage="input" required="true"/>
+    <property name="duration" display-name-key="duration_Display_Key" description-key="Duration" of-type="Whole.None" usage="input" required="true"/>
+    <property name="repeat" display-name-key="repeat_Display_Key" description-key="Repeat" of-type="SingleLine.Text" usage="input" required="true"/>
+    <resources>
+      <code path="bundle.js" order="1"/>
+    </resources>
+    <built-by name="pac" version="1.1.6"/>
+  </control>
+</manifest>

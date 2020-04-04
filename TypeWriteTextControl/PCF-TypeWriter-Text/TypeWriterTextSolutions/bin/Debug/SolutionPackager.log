@@ -1,0 +1,75 @@
+2020-04-04 18:45:18.115 - Info	
+Packing C:\Users\jeschro\OneDrive - Microsoft\src\pcf\SVG Animated Text\TypeWriteTextControl\PCF-TypeWriter-Text\TypeWriterTextSolutions\obj\Debug\ to bin\Debug\TypeWriterTextSolutions.zip
+
+2020-04-04 18:45:18.180 - Info	Processing Component: Entities
+2020-04-04 18:45:18.186 - Info	Processing Component: Roles
+2020-04-04 18:45:18.193 - Info	Processing Component: Workflows
+2020-04-04 18:45:18.194 - Info	Processing Component: FieldSecurityProfiles
+2020-04-04 18:45:18.195 - Info	Processing Component: Templates
+2020-04-04 18:45:18.196 - Info	Processing Component: EntityMaps
+2020-04-04 18:45:18.197 - Info	Processing Component: EntityRelationships
+2020-04-04 18:45:18.224 - Info	Processing Component: OrganizationSettings
+2020-04-04 18:45:18.226 - Info	Processing Component: optionsets
+2020-04-04 18:45:18.226 - Info	Processing Component: CustomControls
+2020-04-04 18:45:18.277 - Info	 - PowerAppsGuy.TypeWriterTextControl
+2020-04-04 18:45:18.389 - Info	Processing Component: SolutionPluginAssemblies
+2020-04-04 18:45:18.392 - Info	Processing Component: EntityDataProviders
+2020-04-04 18:45:18.475 - Info	
+Unmanaged Pack complete.
+
+2020-04-04 19:03:09.540 - Info	
+Packing C:\Users\jeschro\OneDrive - Microsoft\src\pcf\SVG Animated Text\TypeWriteTextControl\PCF-TypeWriter-Text\TypeWriterTextSolutions\obj\Debug\ to bin\Debug\TypeWriterTextSolutions.zip
+
+2020-04-04 19:03:09.626 - Info	Processing Component: Entities
+2020-04-04 19:03:09.633 - Info	Processing Component: Roles
+2020-04-04 19:03:09.646 - Info	Processing Component: Workflows
+2020-04-04 19:03:09.646 - Info	Processing Component: FieldSecurityProfiles
+2020-04-04 19:03:09.647 - Info	Processing Component: Templates
+2020-04-04 19:03:09.655 - Info	Processing Component: EntityMaps
+2020-04-04 19:03:09.656 - Info	Processing Component: EntityRelationships
+2020-04-04 19:03:09.700 - Info	Processing Component: OrganizationSettings
+2020-04-04 19:03:09.702 - Info	Processing Component: optionsets
+2020-04-04 19:03:09.703 - Info	Processing Component: CustomControls
+2020-04-04 19:03:09.813 - Info	 - PowerAppsGuy.TypeWriterText
+2020-04-04 19:03:09.817 - Info	 - PowerAppsGuy.TypeWriterTextControl
+2020-04-04 19:03:10.005 - Info	Processing Component: SolutionPluginAssemblies
+2020-04-04 19:03:10.009 - Info	Processing Component: EntityDataProviders
+2020-04-04 19:03:10.035 - Error	Following objects, required by the solution, are not present. /n/r  Type='CustomControl', Id (or schema name)='CustomControl-PowerAppsGuy.TypeWriterTextControl'.
+/n/r Please do a dependency check on your solution prior to exporting, add the missing objects to your solution and re-export/n/r
+2020-04-04 19:03:10.037 - Error	Error occurred during execution of plugin 'RootComponentValidation': RootComponent validation failed.
+2020-04-04 19:03:10.038 - Error	See log file 'bin\Debug\SolutionPackager.log' for details.
+2020-04-04 19:03:10.072 - Error	Microsoft.Crm.Tools.SolutionPackager.PluginExecutionException: RootComponent validation failed.
+   at Microsoft.Crm.Tools.SolutionPackager.Plugins.RootComponentsValidation.BeforeWrite(PluginContext pluginContext)
+   at Microsoft.Crm.Tools.SolutionPackager.SolutionPackager.<>c__DisplayClass8_0.<Run>b__2(IPackagePlugin p)
+   at Microsoft.Crm.Tools.SolutionPackager.SolutionPackager.InvokePlugin(PluginConfigurationElement pluginConfig, Action`1 action)
+   at Microsoft.Crm.Tools.SolutionPackager.SolutionPackager.Run(IPackageReader reader, IPackageWriter writer)
+   at Microsoft.Crm.Tools.SolutionPackager.SolutionPackager.Run()
+   at Microsoft.Crm.Tools.SolutionPackager.Program.Main(String[] args)
+2020-04-04 19:05:37.312 - Info	
+Packing C:\Users\jeschro\OneDrive - Microsoft\src\pcf\SVG Animated Text\TypeWriteTextControl\PCF-TypeWriter-Text\TypeWriterTextSolutions\obj\Debug\ to bin\Debug\TypeWriterTextSolutions.zip
+
+2020-04-04 19:05:37.344 - Info	Processing Component: Entities
+2020-04-04 19:05:37.352 - Info	Processing Component: Roles
+2020-04-04 19:05:37.358 - Info	Processing Component: Workflows
+2020-04-04 19:05:37.359 - Info	Processing Component: FieldSecurityProfiles
+2020-04-04 19:05:37.360 - Info	Processing Component: Templates
+2020-04-04 19:05:37.362 - Info	Processing Component: EntityMaps
+2020-04-04 19:05:37.363 - Info	Processing Component: EntityRelationships
+2020-04-04 19:05:37.377 - Info	Processing Component: OrganizationSettings
+2020-04-04 19:05:37.378 - Info	Processing Component: optionsets
+2020-04-04 19:05:37.378 - Info	Processing Component: CustomControls
+2020-04-04 19:05:37.415 - Info	 - PowerAppsGuy.TypeWriterText
+2020-04-04 19:05:37.420 - Info	 - PowerAppsGuy.TypeWriterTextControl
+2020-04-04 19:05:37.521 - Info	Processing Component: SolutionPluginAssemblies
+2020-04-04 19:05:37.524 - Info	Processing Component: EntityDataProviders
+2020-04-04 19:05:37.544 - Error	Following objects, required by the solution, are not present. /n/r  Type='CustomControl', Id (or schema name)='CustomControl-PowerAppsGuy.TypeWriterTextControl'.
+/n/r Please do a dependency check on your solution prior to exporting, add the missing objects to your solution and re-export/n/r
+2020-04-04 19:05:37.546 - Error	Error occurred during execution of plugin 'RootComponentValidation': RootComponent validation failed.
+2020-04-04 19:05:37.547 - Error	See log file 'bin\Debug\SolutionPackager.log' for details.
+2020-04-04 19:05:37.565 - Error	Microsoft.Crm.Tools.SolutionPackager.PluginExecutionException: RootComponent validation failed.
+   at Microsoft.Crm.Tools.SolutionPackager.Plugins.RootComponentsValidation.BeforeWrite(PluginContext pluginContext)
+   at Microsoft.Crm.Tools.SolutionPackager.SolutionPackager.<>c__DisplayClass8_0.<Run>b__2(IPackagePlugin p)
+   at Microsoft.Crm.Tools.SolutionPackager.SolutionPackager.InvokePlugin(PluginConfigurationElement pluginConfig, Action`1 action)
+   at Microsoft.Crm.Tools.SolutionPackager.SolutionPackager.Run(IPackageReader reader, IPackageWriter writer)
+   at Microsoft.Crm.Tools.SolutionPackager.SolutionPackager.Run()
+   at Microsoft.Crm.Tools.SolutionPackager.Program.Main(String[] args)
