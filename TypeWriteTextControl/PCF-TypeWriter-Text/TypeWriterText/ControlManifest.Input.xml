@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
-  <control namespace="PowerAppsGuy" constructor="TypeWriterText" version="0.0.6" display-name-key="TypeWriterText" description-key="TypeWriterText description" control-type="standard">
+  <control namespace="PowerAppsGuy" constructor="TypeWriterText" version="0.0.5" display-name-key="TypeWriterText" description-key="TypeWriterText description" control-type="standard">
     <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
     <property name="text" display-name-key="text_Display_Key" description-key="Text" of-type="SingleLine.Text" usage="bound" required="true" />
     <property name="color" display-name-key="color_Display_Key" description-key="Color" of-type="SingleLine.Text" usage="input" required="true" />
