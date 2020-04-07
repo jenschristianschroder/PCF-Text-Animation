@@ -13,8 +13,8 @@ export class MirrorText implements ComponentFramework.StandardControl<IInputs, I
 
 	private padding: Padding;
 
-	private horizontalAlignment: HorizontalAlignment;
-	private verticalAlignment: VerticalAlignment;
+	private horizontalAlignment: string;// HorizontalAlignment;
+	private verticalAlignment: string;// VerticalAlignment;
 	
 	private font: string;
 	private fontsize: number;
@@ -94,7 +94,18 @@ export class MirrorText implements ComponentFramework.StandardControl<IInputs, I
 				this.spacing = context.parameters.spacing.raw;
 		}
 
+				
+		if(context.parameters.verticalAlignment != null){
+			if(context.parameters.verticalAlignment.raw != null)
+				this.verticalAlignment = context.parameters.verticalAlignment.raw;
+		}
+
+		if(context.parameters.horizontalAlignment != null){
+			if(context.parameters.horizontalAlignment.raw != null)
+				this.horizontalAlignment = context.parameters.horizontalAlignment.raw;
+		}
 		
+		/* 
 		if(context.parameters.verticalAlignment != null){
 			if(context.parameters.verticalAlignment.raw != null)
 				this.verticalAlignment = VerticalAlignment[context.parameters.verticalAlignment.raw];
@@ -104,7 +115,7 @@ export class MirrorText implements ComponentFramework.StandardControl<IInputs, I
 			if(context.parameters.horizontalAlignment.raw != null)
 				this.horizontalAlignment = HorizontalAlignment[context.parameters.horizontalAlignment.raw];
 		}
- 		
+ 		 */
 		if(context.parameters.paddingLeft != null){
 			if(context.parameters.paddingLeft.raw != null)
 				this.padding.left = context.parameters.paddingLeft.raw;
@@ -160,7 +171,7 @@ export class MirrorText implements ComponentFramework.StandardControl<IInputs, I
 	}
 
 	// configure the svg element according to input	
-	private configureText(text: string, color: string, font: string, fontsize: number, fontweight: number, spacing: number, padding: Padding, horizontalAlignment: HorizontalAlignment, verticalAlignment: VerticalAlignment): string {
+	private configureText(text: string, color: string, font: string, fontsize: number, fontweight: number, spacing: number, padding: Padding, horizontalAlignment: string, verticalAlignment: string): string {
 		if(font.indexOf(" ") > -1) {
 			font = "\"" + font + "\"";
 		}
@@ -169,36 +180,46 @@ export class MirrorText implements ComponentFramework.StandardControl<IInputs, I
 		var textSize = this.getTextSize(text, font, fontsize, fontweight, spacing);
 
 		var px = 0;
-		if(horizontalAlignment == HorizontalAlignment.Right) {
-			px = this.controlWidth - textSize.width - padding.right;
-		}
-		else if(horizontalAlignment == HorizontalAlignment.Center) {
-			px = this.controlWidth/2 - textSize.width/2;
-		}
-		else {
-			px = padding.left;
-		}
-		
 		var py = 0;
-		if(verticalAlignment == VerticalAlignment.Bottom) {
-			py = this.controlHeight - textSize.height - padding.bottom;
-		}
-		else if(verticalAlignment == VerticalAlignment.Middle) {
-			py = this.controlHeight/2;
-		}
-		else {
-			py = textSize.height + padding.top;
-		}
-		
 
-
-		let svgstring = "<svg width='" + this.controlWidth + "' height='" + this.controlHeight + "' viewBox='0 0 " + this.controlWidth + " " + this.controlHeight + "'>" +
+		if(this.controlHeight > 0 && this.controlWidth > 0)
+		{
+			px = 0;
+			if(horizontalAlignment == HorizontalAlignment.Right) {
+				px = this.controlWidth - textSize.width - padding.right;
+			}
+			else if(horizontalAlignment == HorizontalAlignment.Center) {
+				px = this.controlWidth/2 - textSize.width/2;
+			}
+			else {
+				px = padding.left;
+			}
+			
+			py = 0;
+			if(verticalAlignment == VerticalAlignment.Bottom) {
+				py = this.controlHeight - textSize.height - padding.bottom;
+			}
+			else if(verticalAlignment == VerticalAlignment.Middle) {
+				py = this.controlHeight/2;
+			}
+			else {
+				py = textSize.height + padding.top;
+			}
+		}
+				
+	 /* 
+		var px = this.controlWidth/2 - textSize.width/2;
+		var py = this.controlHeight/2;
+  */
+		let svgstring = "<svg width='" + (this.controlWidth - 10) + "' height='" + (this.controlHeight - 10) + "' viewBox='0 0 " + this.controlWidth + " " + this.controlHeight + "'>" +
 							"<defs>" +
+ 
 								"<linearGradient id='" + randomString + "fadeReflection' y2='100%' x2='0%'>" +
 									"<stop stop-color='" + color + "' stop-opacity='0' offset='0.2'/>" +
 									"<stop stop-color='" + color + "' stop-opacity='0.1' offset='0.5'/>" +
 									"<stop stop-color='" + color + "' stop-opacity='0.4' offset='0.8'/>" +
 								"</linearGradient>" +
+ 
 							"</defs>" +
 							"<g class='container' transform='translate(" + px + "," + py + ")'>" +
 								"<use style='transform: rotateX(180deg)' xlink:href='#" + randomString + "text' fill='url(#" + randomString + "fadeReflection)'/>" +
