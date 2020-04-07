@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <manifest>
-  <control namespace="PowerAppsGuy" constructor="MirrorText" version="0.0.3" display-name-key="MirrorText" description-key="MirrorText description" control-type="standard">
+  <control namespace="PowerAppsGuy" constructor="MirrorText" version="0.0.10" display-name-key="MirrorText" description-key="MirrorText description" control-type="standard">
     <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
     <property name="text" display-name-key="text_Display_Key" description-key="Text" of-type="SingleLine.Text" usage="bound" required="true" />
     <property name="controlwidth" display-name-key="controlwidth_Dispaly_Key" description-key="Control width" of-type="Whole.None" usage="input" required="false" />
@@ -16,18 +16,24 @@
     <property name="paddingTop" display-name-key="paddingtop_Display_key" description-key="Padding top" of-type="Whole.None" usage="input" required="false" />
     <property name="paddingBottom" display-name-key="paddingbottom_Display_key" description-key="Padding bottom" of-type="Whole.None" usage="input" required="false" />
 
+ 
+    <property name="horizontalAlignment" display-name-key="horizontalAlignment_Dispaly_Key" description-key="Horizontal alignment" usage="input" of-type="SingleLine.Text" required="false"/>
+    <!-- 
     <property name="horizontalAlignment" display-name-key="horizontalAlignment_Dispaly_Key" description-key="Horizontal alignment" usage="input" of-type="Enum" required="false">
       <value name="Left" display-name-key="Left" description-key="Left alignment" default="true">Left</value>
       <value name="Center" display-name-key="Center" description-key="Center alignment">Center</value>
       <value name="Right" display-name-key="Right" description-key="Right alignment">Right</value>
     </property>
-
+ -->
+    <property name="verticalAlignment" display-name-key="verticalAlignment_Dispaly_Key" description-key="Vertical alignment" usage="input" of-type="SingleLine.Text" required="false"/>
+<!-- 
     <property name="verticalAlignment" display-name-key="verticalAlignment_Dispaly_Key" description-key="Vertical alignment" usage="input" of-type="Enum" required="false">
       <value name="Top" display-name-key="Top" description-key="Top alignment" default="true">Top</value>
       <value name="Middle" display-name-key="Middle" description-key="Middle alignment">Middle</value>
       <value name="Bottom" display-name-key="Bottom" description-key="Bottom alignment">Bottom</value>
     </property>
-    <resources>
+ -->
+     <resources>
       <code path="index.ts" order="1"/>
       <!-- UNCOMMENT TO ADD MORE RESOURCES
       <css path="css/MirrorText.css" order="1" />
