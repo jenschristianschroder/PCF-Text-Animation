@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<manifest>
+  <control namespace="PowerAppsGuy" constructor="GradientText" version="0.0.1" display-name-key="GradientText" description-key="GradientText description" control-type="standard">
+    <!-- dataset node represents a set of entity records on CDS; allow more than one datasets -->
+    <!-- Core configuration properties -->
+    <property name="controlWidth" display-name-key="controlWidth_Display_Key" description-key="controlWidth" of-type="Whole.None" usage="input" required="true" />
+    <property name="controlHeight" display-name-key="controlHeight_Display_Key" description-key="controlHeight" of-type="Whole.None" usage="input" required="true" />
+
+
+    <!-- Gradient configuration properties -->
+    <data-set name="GradientDataSet" display-name-key="GradientDataset_Display_Key">
+      <property-set name="offset" display-name-key="offset_Display_Key" description-key="Gradient offset" of-type="Whole.None" usage="bound" required="true" />
+      <property-set name="color" display-name-key="color_Display_Key" description-key="Gradient color" of-type="SingleLine.Text" usage="bound" required="true" />
+    </data-set>
+    <property name="shape" display-name-key="shape_Display_Key" description-key="shape" of-type="SingleLine.Text" usage="input" required="false"/>
+    <property name="gradient" display-name-key="gradient_Display_Key" description-key="gradient" of-type="SingleLine.Text" usage="input" required="false"/>
+    <property name="rotation" display-name-key="rotation_Display_Key" description-key="Rotation" of-type="Whole.None" usage="input" required="false" />
+    <property name="offsetStart" display-name-key="offsetStart_Display_Key" description-key="Start offset" of-type="Whole.None" usage="input" required="true" />
+    <property name="offsetEnd" display-name-key="offsetEnd_Display_Key" description-key="End offset" of-type="Whole.None" usage="input" required="true" />
+
+    <!-- Text configuration properties -->
+    <property name="text" display-name-key="text_Display_Key" description-key="Text" of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="textcolor" display-name-key="color_Display_Key" description-key="Color" of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="font" display-name-key="font_Display_Key" description-key="Font" of-type="SingleLine.Text" usage="input" required="true" />
+    <property name="fontsize" display-name-key="font_size_Display_Key" description-key="Font size" of-type="Whole.None" usage="input" required="true" />
+    <property name="fontweight" display-name-key="font_weight_Display_Key" description-key="Font weight" of-type="Whole.None" usage="input" required="true" />
+    <property name="spacing" display-name-key="spacing_Display_Key" description-key="Letter spacing" of-type="Whole.None" usage="input" required="true" />
+    <property name="paddingLeft" display-name-key="paddingleft_Display_key" description-key="Padding left" of-type="Whole.None" usage="input" required="false" />
+    <property name="paddingRight" display-name-key="paddingright_Display_key" description-key="Padding right" of-type="Whole.None" usage="input" required="false" />
+    <property name="paddingTop" display-name-key="paddingtop_Display_key" description-key="Padding top" of-type="Whole.None" usage="input" required="false" />
+    <property name="paddingBottom" display-name-key="paddingbottom_Display_key" description-key="Padding bottom" of-type="Whole.None" usage="input" required="false" />
+    <property name="horizontalAlignment" display-name-key="horizontalAlignment_Dispaly_Key" description-key="Horizontal alignment" usage="input" of-type="SingleLine.Text" required="false"/>
+    <property name="verticalAlignment" display-name-key="verticalAlignment_Dispaly_Key" description-key="Vertical alignment" usage="input" of-type="SingleLine.Text" required="false"/>
+
+    <resources>
+      <code path="index.ts" order="1"/>
+      <!-- UNCOMMENT TO ADD MORE RESOURCES
+      <css path="css/GradientText.css" order="1" />
+      <resx path="strings/GradientText.1033.resx" version="1.0.0" />
+      -->
+    </resources>
+    <!-- UNCOMMENT TO ENABLE THE SPECIFIED API
+    <feature-usage>
+      <uses-feature name="Device.captureAudio" required="true" />
+      <uses-feature name="Device.captureImage" required="true" />
+      <uses-feature name="Device.captureVideo" required="true" />
+      <uses-feature name="Device.getBarcodeValue" required="true" />
+      <uses-feature name="Device.getCurrentPosition" required="true" />
+      <uses-feature name="Device.pickFile" required="true" />
+      <uses-feature name="Utility" required="true" />
+      <uses-feature name="WebAPI" required="true" />
+    </feature-usage>
+    -->
+  </control>
+</manifest>
